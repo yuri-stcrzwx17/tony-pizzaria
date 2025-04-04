@@ -1,39 +1,77 @@
-*{
+:root{
+    --primary-color: #F07807;
+    --second-color: #f7e5d8;
+}
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
 a {
-text-decoration: none;
-color: inherit;
+    text-decoration: none;
+    color: inherit;
 }
 
 ul,
 ol,
-li{
+li {
     list-style: none;
 }
 
-boby{
+body {
     padding: 0 80px;
+    font-family: "Poppins", sans-serif;
+    background: var(--second-color);
 }
 
-header{
-background-color: blue;
-height: 60px;
-position: absolute;
-width: calc(100%-160px);
-top: 60px;
+header {
+    height: 60px;
+    position: absolute;
+    width: calc(100% - 160px);
+    top: 60px;
+    display: flex;
+    justify-content: space-between;
 }
 
+header menu {
+    display: flex;
+    gap: 48px;
+    align-items: center;
+}
 
-main{
+header li {
+
+padding: 4px 8px;
+transition: .5s;
+}
+
+header li:hover{
+    background-color: var(--second-color);
+    box-shadow: 0 4px 8px #0005;
+}
+header button{
+
+height: 48px;
+width: 120px;
+border-radius: 12px;
+border: none;
+box-shadow: 0 4px 8px #0005;
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 8px;
+background: var(--second-color);
+color: var(--primary-color);
+font-weight: 600;
+font-family: inherit;
+}
+main {
     height: 700px;
-    background-color: red;
+    /* background-color: tomato; */
 }
 
-footer{
-    height: 526px
-background-color: pink;
+footer {
+    height: 526px;
+    background-color: pink;
 }
