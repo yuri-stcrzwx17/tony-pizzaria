@@ -143,6 +143,12 @@ color: var(--primary-color);
     transition: .6s;
 }
 
+.overflow{
+    position: absolute;
+    top: 0;
+    
+
+}
 .container-info{
        display: flex;
     justify-content: space-between;
