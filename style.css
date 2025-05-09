@@ -1,83 +1,71 @@
 :root{
     --primary-color: #F07807;
-    --second-color: #f7e5d8;
-    --defaut-padding: 0 80px;
+    --secundary-color: #FEF2E7;
+    --default-padding: 0 80px;
 }
 * {
+    padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
-
-a {
+a{
     text-decoration: none;
     color: inherit;
 }
-
-ul,
-ol,
-li {
+ul,ol,li{
     list-style: none;
 }
 
-
-body {
+body{
     font-family: "Poppins", sans-serif;
-    background: var(--second-color);
+    background-color: var(--secundary-color);
 }
 
-
-
-header {
-    height: 60px;
+header{
     position: fixed;
+    height: 60px;
     width: 100%;
     top: 60px;
     display: flex;
     justify-content: space-between;
-    padding: var(--defaut-padding);
-    background-color: yellowgreen;
+    align-items: center;
+    padding: var(--default-padding);  
+}
+
+header li{
+    padding: 4px 8px;
+    transition: .5s;
+}
+
+header li:hover{
+    background-color: var(--secundary-color);
+    box-shadow: 0 4px 8px #0005;
+}
+
+header button {
+    height: 48px;
+    width: 120px;
+    border-radius: 12px;
+    border: none;
+    box-shadow: 0 4px 8px #0005;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--secundary-color);
+    color: var(--primary-color);
+    font-weight: 600;
+    font-family: inherit;
 }
 
 header menu {
     display: flex;
-    gap: 48px;
     align-items: center;
+    gap: 48px;
 }
-
-header li {
-
-padding: 4px 8px;
-transition: .5s;
-}
-
-header li:hover{
-    background-color: var(--second-color);
-    box-shadow: 0 4px 8px #0005;
-}
-
-header button{
-
-height: 48px;
-width: 120px;
-border-radius: 12px;
-border: none;
-box-shadow: 0 4px 8px #0005;
-display: flex;
-justify-content: center;
-align-items: center;
-gap: 8px;
-background: var(--second-color);
-color: var(--primary-color);
-font-weight: 600;
-font-family: inherit;
-}
-
-
 section{
     height: 100vh;
-    padding: var(--defaut-padding);
+    padding: var(--default-padding);
 }
-
 .home {
     display: grid;
     grid-template-rows: 3fr 1fr;
@@ -86,50 +74,38 @@ section{
     background-position: top right;
     background-size: contain;
 }
-.container-top{
+.container-top {
     display: flex;
     justify-content: center;
     align-items: end;
     gap: 64px;
 }
-
-.container-top h2{
+.container-top h2 {
     position: relative;
-    bottom: 64px;
+    bottom: 80px;
     font-size: 4rem;
     font-weight: 500;
     font-style: italic;
     width: 568px;
 }
-
-.container-top span{
-color: var(--primary-color);
-
+.container-top span {
+    color: var(--primary-color);
 }
-
-.container-pizzas{
+.container-produtos {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-
 }
-
-.pizza{
-    position:relative;
+.produto {
+    position: relative;
     display: grid;
-    box-shadow: 0 4px 8px #0005;
+    box-shadow: 0 4px 8px #0005;;
     border-radius: 12px;
-
-
 }
-
-.add-pizza{
+.add-pizza {
     position: absolute;
     top: -16px;
     right: -16px;
-     align-items: center;
-    padding: 0 16px;
     display: grid;
     place-content: center;
     width: 40px;
@@ -138,21 +114,26 @@ color: var(--primary-color);
     font-size: 2rem;
     color: white;
     border-radius: 12px;
-    border: 4px solid white;
+    border: 4px solid white ;
     opacity: 0;
-    transition: .6s;
+    transition: 1s;
 }
 
+.produto:hover .add-pizza {
+    opacity: 1;
+}
 .overflow{
     position: absolute;
     top: 0;
-    
-
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
 }
-.container-info{
-       display: flex;
-    justify-content: space-between;
+.container-info {
     position: absolute;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
     padding: 0 16px;
     bottom: -36px;
@@ -161,19 +142,20 @@ color: var(--primary-color);
     background-color: #0008;
     border-radius: 0 0 8px 8px;
     transition: .6s;
-   
 }
-
-.container-info p{
+.produto:hover .container-info {
+    bottom: 0;
+}
+.container-info p {
     font-size: 10px;
-    font-weight: 200;
+    font-weight: 400px;
     width: 102px;
     color: white;
-
 }
 
 .container-info span{
- 
+    display: grid;
+    place-content: center;
     width: 57px;
     height: 20px;
     background-color: var(--primary-color);
@@ -182,19 +164,71 @@ color: var(--primary-color);
     border-radius: 4px;
 }
 
-.pizza:hover .add-pizza{
-    opacity: 1;
+.cardapio {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.cardapio-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border-bottom: 2px solid var(--primary-color);
+    height: 260px;
 }
 
-.cardapio{
-    background-color: purple;
+.cardapio-item:last-child{
+    border: none;
+}
+.section-title {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+}
+.section-title h3 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    font-weight: 400;
+}
+.item-texto {
+    display: flex;
+    justify-content: space-between;
+}
+.item-texto h4,
+.item-texto a {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    font-weight: 600;
 }
 
-.servicos{
-    background: gold;
+.bebida {
+    box-shadow: none;
+    transition: .5s;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-footer {
-    height: 1526px;
+.bebida p {
+    width: 100%;
+}
+
+.bebida .preco {
+    color: var(--primary-color);
+}
+
+.bebida .descricao {
+    font-size: 0.6rem;
+}
+.bebida:hover {
+    box-shadow: 0 4px 8px #0005;;
+}
+.servicos {
+    background-color: gold;
+}
+footer{
     background-color: pink;
+    height: 1526px;
 }
