@@ -336,3 +336,112 @@ footer nav{
     display: grid;
     place-content: center;
 }
+@media(max-width:1024px){
+:root {
+    --defalt-padding: 0 48px;
+}
+
+header{
+    left: 0;
+    top: 64px;
+    position:absolute;
+    background-color: transparent;
+}
+
+header menu{
+        width: 100vw;
+        height: 64px;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        background-color: var(--primary-color);
+        color: #fff;
+        justify-content: space-evenly;
+        
+}
+
+header li:hover{
+        background-color: var(--primary-color);
+}
+
+.home{
+        grid-template-rows: none;
+        place-content: center;
+}
+
+.home .container-produtos {
+        display: none;
+}
+
+.container-top {
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 128px;
+
+}
+
+.container-produtos{
+    gap: 32px;
+
+}
+
+.produto{
+    width: auto;
+}
+
+
+
+.produto:nth-child(3),
+.produto:nth-child(4),
+.produto:nth-child(5) {
+    display: none;
+}
+
+
+.cardapio-item{
+    border: none;
+}
+
+.servicos-container{
+    flex-direction: column;
+    gap: 48px;
+}
+
+.servicos-item{
+    height: 260px;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.servicos-item p {
+    width: 330px;
+}
+.footer nav {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    gap: 32px;
+    flex-wrap: wrap;
+
+}
+
+.nav-item{
+    padding: 0;
+    height: auto;
+}
+
+.nav-item:nth-child(2){
+    display: none;
+
+}
+
+.social li{
+    justify-content: end;
+}
+
+.copy-rigth{
+    margin-bottom: 64px;
+}
+
+}
