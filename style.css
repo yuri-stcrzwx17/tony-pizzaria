@@ -16,6 +16,10 @@ ul,ol,li{
     list-style: none;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 body{
     font-family: "Poppins", sans-serif;
     background-color: var(--secundary-color);
@@ -29,7 +33,9 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: var(--default-padding);  
+    padding: var(--default-padding); 
+    background-color: #fff7;
+    z-index: 999;
 }
 
 header li{
